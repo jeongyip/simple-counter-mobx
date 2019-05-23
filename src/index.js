@@ -5,11 +5,15 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import CounterStore from './stores/Counter';
+import MarketStore from './stores/Market';
+import RootStore from './stores/index';
 
-const counter = new CounterStore();
+const root = new RootStore();
+// const counter = new CounterStore();
+// const market = new MarketStore();
 
 ReactDOM.render(
-  <Provider counter={counter}>
+  <Provider {...root} >
     <App />
   </Provider>,
  document.getElementById('root')
@@ -19,3 +23,6 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+
+
